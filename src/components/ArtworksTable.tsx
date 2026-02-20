@@ -42,8 +42,10 @@ export default function ArtworksTable() {
   };
 
   const onPageChange = (event: DataTablePageEvent) => {
-    const newPage = event.page + 1;
-    setPage(newPage);
+    if (typeof event.page === "number") {
+      const newPage = event.page + 1;
+      setPage(newPage);
+    }
   };
 
   const handleCustomSelect = () => {
